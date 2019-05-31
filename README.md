@@ -32,8 +32,23 @@ rm -r /tmp/update
 
 ```
 
-## Which archive format is the best for updates?
-One that supports unpacking as stream (to save memory). I think tar and zip.
-
 ## Why is it here SHA1 and not SHA256?
 ecdsa-with-SHA256 is not supported by Openssl/pam_pkcs11
+
+## Should you encrypt the update?
+If the attacker has access to the system, encrypting the update doest not prevent him from extracting the update contents. But it helps in reducing humans errors, for example Users can't accidentally unpack the update.
+
+> Don't go overboard or you may lock yourself out. I did it two times.
+
+## Update tips
+* Host the update on a separate subdomain.
+* Backup your private keys really well, just having them on a dev computer or server is not enough. (maybe print as QR?)
+* The changelog should be a format with textsize and color, so you can use big red text if the user needs to do an extra step before or after the update.
+* The changelog maybe needs to be translated.
+* Ship delta updates with `bsdiff`
+
+
+
+
+
+
