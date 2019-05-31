@@ -1,8 +1,10 @@
 # Signing Updates
 
 Inspired by [Sparkle](https://sparkle-project.org)
+
 **Warning** When you lose the private key you can do no longer updates.
-Don't forget to document the signature format, here it is ecdsa-SHA1
+
+>Don't forget to document the signature format, here it is ecdsa-SHA1
 
 ```
 # generate an ES256 key pair using the Eliptic Curve algorithm
